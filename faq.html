@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>FAQ - MIST AUTOMATION</title>
+    <title>FAQ - PYTEST AUTOMATION</title>
     <style>
         body {
             font-family: Garamond, serif;
@@ -137,27 +137,23 @@
     
     <div class="faq-section">
         <div class="faq-item">
-            <div class="faq-question">What is MIST Automation?</div>
+            <div class="faq-question">What is this automation framework?</div>
             <div class="faq-answer">
-                Medicare Integrate System Testing (MIST) is an initiative designed to support the Centers for Medicare & Medicaid Services (CMS) by providing comprehensive and integrated testing capabilities that are integrated into the Fee-For-Service (FFS) ecosystem. This ecosystem includes several core components: the Fiscal Intermediary Standard System (FISS), Multi-Carrier System (MCS), ViPS Medicare System (VMS), Common Working File (CWF), and the Benefits Coordination & Recovery Center (BCRC) / Medicare Secondary Payer Systems Contractor (MSPSC) through the Coordination of Benefits Agreement (COBA) processes.
-MIST also incorporates the Medicare Payment System Modernization (MPSM) project to facilitate both integrated and regression testing. This ensures the integrity and reliability of the end-to-end FFS claims processing environment.
-CMS handles over 1.2 billion claims annually and depends on modern, reliable, and defect-free applications to operate efficiently. MIST enables this by thoroughly validating system interactions across all relevant platforms. It ensures the MPSM is fully integrated with existing FFS systems, that contract requirements are met, and that all functionalities are accurately emulated prior to production deployment. 
-The overarching objective of MIST is to verify that CMS business and technical requirements are implemented correctly and that all system changes are free of defects before they are introduced into the production environment.
-
+                This is a real-time pytest automation dashboard that provides comprehensive testing capabilities with live monitoring and reporting. The framework supports marker-based test execution, allowing you to run specific test groups (smoke, regression, UI, performance, security) with real-time status updates and detailed error reporting. It features an interactive HTML dashboard with auto-refresh capabilities, making it ideal for continuous integration and test monitoring workflows.
             </div>
         </div>
         
         <div class="faq-item">
             <div class="faq-question">How do I interpret the test results?</div>
             <div class="faq-answer">
-                Explanation of how to read and understand the test results...
+                Test results are color-coded for easy identification: Green indicates passed tests, Red shows failed tests, Orange represents error states, Gray shows skipped tests, and Yellow indicates tests currently in progress. Each test displays execution time, markers, and detailed exception logs for failures. The summary section provides overall statistics including pass/fail rates and total execution time.
             </div>
         </div>
 
         <div class="faq-item">
             <div class="faq-question">What do the different status colors mean?</div>
             <div class="faq-answer">
-                Explanation of color coding and status meanings...
+                The status colors provide quick visual feedback: <strong style="color: green;">Green (Passed)</strong> - Test executed successfully, <strong style="color: red;">Red (Failed)</strong> - Test failed with assertion errors, <strong style="color: orange;">Orange (Error)</strong> - Test encountered unexpected errors, <strong style="color: gray;">Gray (Skipped/Not Selected)</strong> - Test was skipped or not selected for execution, <strong style="color: #ffa500;">Yellow (In Progress)</strong> - Test is currently running.
             </div>
         </div>
     </div>
