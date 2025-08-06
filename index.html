@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MIST AUTOMATION EXECUTION LIVE REPORT</title>
+    
+    <!-- External CSS Dependencies -->
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css">
+    
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Page Header -->
+    <h1>MIST AUTOMATION EXECUTION LIVE REPORT</h1>
+
+    <!-- Navigation Menu -->
+    <nav class="nav-menu">
+        <ul>
+            <li><a href="index.html" class="active">Test Results</a></li>
+            <li><a href="faq.html">FAQ</a></li>
+        </ul>
+    </nav>
+
+    <!-- Control Buttons Section -->
+    <div class="control-section">
+        <button id="refresh-btn" class="control-button" onclick="toggleAutoRefresh()">
+            Start Auto-Refresh
+        </button>
+        <button id="stop-btn" class="control-button stop-button" onclick="stopTestExecution()">
+            Stop Test Execution
+        </button>
+        <div id="refresh-status" style="margin-top: 10px; color: #666;"></div>
+    </div>
+
+    <!-- Test Execution Summary Box -->
+    <div class="summary-box">
+        <strong>Current Status:</strong> <span id="current-status"></span><br>
+        <strong>Start Time:</strong> <span id="start-time"></span><br>
+        <strong>End Time:</strong> <span id="end-time"></span><br>
+        <strong>Overall Execution Time:</strong> <span id="overall-time"></span><br>
+        <strong>Passed:</strong> <span id="passed-count"></span>
+        <strong>Failed:</strong> <span id="failed-count"></span>
+        <strong>Errors:</strong> <span id="error-count"></span>
+        <strong>Skipped:</strong> <span id="skipped-count"></span>
+        <strong>In Progress:</strong> <span id="inprogress-count"></span>
+        <strong>Not Tested:</strong> <span id="not-tested-count"></span>
+    </div>
+    
+    <hr>
+    
+    <!-- Test Results Table -->
+    <table id="test-table" class="display">
+        <thead>
+            <tr>
+                <th>Test Name</th>
+                <th>Status</th>
+                <th>Markers</th>
+                <th>Start Time</th>
+                <th>End Time</th>
+                <th>Execution Time</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Rows will be populated by JavaScript -->
+        </tbody>
+    </table>
+
+    <!-- External JavaScript Dependencies -->
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+    <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
+    
+    <!-- Custom Dashboard JavaScript -->
+    <script src="dashboard.js"></script>
+
+    <!-- Page Footer -->
+    <footer>
+        <img src="sparksoft_logo.png" alt="SparkSoft Corp Logo">
+        <p>Designed by SparkSoft Corp</p>
+    </footer>
+</body>
+</html>

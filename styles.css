@@ -1,0 +1,413 @@
+/* Global Styles */
+body {
+    font-family: Garamond, serif;
+    margin: 0;
+    padding: 20px;
+    background-color: #f8f9fa;
+}
+
+/* Header Styling */
+h1 {
+    text-align: center;
+    color: #0059a1;  
+    margin: 40px 0;
+    font-size: 2.5em;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding-bottom: 20px;
+    border-bottom: 2px solid #656f7a;  
+}
+
+/* Test Status Row Colors */
+tr.passed { 
+    background-color: #e6ffe6 !important; 
+    color: #222; 
+}
+
+tr.failed { 
+    background-color: #ffe6e6 !important; 
+    color: #222; 
+}
+
+tr.skipped { 
+    background-color: #f9f9f9 !important; 
+    color: #222; 
+}
+
+tr.inprogress { 
+    background-color: #fffbe6 !important; 
+    color: #222; 
+}
+
+tr.notstarted { 
+    background-color: #f8f9fa !important; 
+    color: #666; 
+}
+
+tr.error { 
+    background-color: #fff3e0 !important; 
+    color: #e65100; 
+}
+
+tr.not-tested { 
+    background-color: #f8f9fa !important; 
+    color: #6c757d; 
+}
+
+/* Exception Log and Test Status Styling */
+.exception-log { 
+    display: none; 
+    background-color: #f8f8f8; 
+    border: 1px solid #ddd; 
+    border-radius: 4px;
+    margin: 10px 0;
+    padding: 15px;
+    font-family: 'Courier New', monospace;
+    font-size: 0.9em;
+    color: #e65100; /* Changed to orange for error logs */
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    max-height: 300px;
+    overflow-y: auto;
+    box-shadow: inset 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.exception-row {
+    display: none;
+    background-color: #fff5f5 !important;
+}
+
+.exception-row td {
+    padding: 0 !important;
+    border: none !important;
+}
+
+.expandable { 
+    cursor: pointer; 
+    color: #e65100; /* Changed to orange for error expandable links */
+    text-decoration: none; 
+    font-weight: bold;
+}
+
+.expandable:hover {
+    text-decoration: underline;
+}
+
+.failed .expandable { 
+    color: #d73527; /* Keep red for failed tests */
+}
+
+/* Summary Box Styling */
+.summary-box {
+    background: white;
+    border-radius: 12px;
+    padding: 25px;
+    margin: 30px auto;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    max-width: 1200px;
+}
+
+.summary-box strong {
+    font-family: Garamond, serif;
+    font-size: 1.1em;
+    margin-right: 15px;
+    color: #0059a1;  
+}
+
+.summary-box span {
+    font-family: Garamond, serif;
+    font-size: 1.1em;
+    color: #656f7a; 
+}
+
+/* DataTable Styling */
+table.display {
+    width: 100%;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+}
+
+/* DataTable Scrolling Enhancements */
+.dataTables_scrollHead {
+    background-color: #0059a1;
+    color: white;
+}
+
+.dataTables_scrollHead th {
+    background-color: #0059a1 !important;
+    color: white !important;
+    font-weight: bold;
+    padding: 12px 8px;
+    border-bottom: 2px solid #e86b31;
+}
+
+.dataTables_scrollBody {
+    border: 1px solid #ddd;
+    border-radius: 0 0 8px 8px;
+}
+
+/* Ensure proper table styling with fixed header */
+table.display thead th {
+    background-color: #0059a1;
+    color: white;
+    font-weight: bold;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+/* Footer Styling */
+footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    margin-top: 40px;
+    border-top: 1px solid #656f7a;  
+}
+
+footer img {
+    max-width: 150px;
+    order: 1;
+}
+
+footer p {
+    color: #656f7a;  
+    font-size: 14px;
+    margin: 0;
+    order: 2; 
+}
+
+/* Navigation Menu Styling */
+.nav-menu {
+    background-color: #0059a1;  
+    padding: 15px 0;
+    margin-bottom: 20px;
+}
+
+.nav-menu ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+
+.nav-menu a {
+    color: white;
+    text-decoration: none;
+    font-family: Garamond, serif;
+    font-size: 1.1em;
+    padding: 5px 15px;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+}
+
+.nav-menu a:hover, 
+.nav-menu a.active {
+    background-color: #e86b31;
+}
+
+/* Control Buttons Section */
+.control-section {
+    text-align: center;
+    margin: 20px;
+    padding: 20px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.control-button {
+    background-color: #0059a1;
+    color: white;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-family: Garamond, serif;
+    font-size: 1em;
+    margin: 0 10px;
+    transition: background-color 0.3s;
+}
+
+.control-button:hover {
+    background-color: #e86b31;
+}
+
+.stop-button {
+    background-color: #dc3545;
+}
+
+.stop-button:hover {
+    background-color: #c82333;
+}
+
+/* Exception Display Styling */
+.exception-display-row {
+    background-color: #fff5f5 !important;
+}
+
+.exception-display {
+    margin: 0;
+    padding: 0;
+    background-color: transparent;
+    border: none;
+    box-shadow: none;
+    animation: slideDown 0.3s ease-out;
+}
+
+.exception-content {
+    padding: 15px;
+    position: relative;
+    background-color: #fff5f5;
+    border: 1px solid #e6b3b3;
+    border-radius: 8px;
+    margin: 10px;
+}
+
+.exception-content strong {
+    color: #e65100; /* Changed to orange for error content headers */
+    font-size: 1.1em;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.close-exception {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    background: none;
+    border: none;
+    font-size: 24px;
+    color: #e65100; /* Changed to orange for error close buttons */
+    cursor: pointer;
+    padding: 0;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.close-exception:hover {
+    background-color: #f0f0f0;
+}
+
+.exception-log {
+    background-color: #f8f8f8;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 15px;
+    font-family: 'Courier New', monospace;
+    font-size: 0.9em;
+    color: #e65100; /* Changed to orange for error log text */
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    max-height: 300px;
+    overflow-y: auto;
+    margin: 10px 0;
+    display: block;
+    min-height: 50px;
+}
+
+/* Animations */
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        max-height: 0;
+    }
+    to {
+        opacity: 1;
+        max-height: 400px;
+    }
+}
+
+/* Marker tag styling */
+.test-markers {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px;
+    margin-top: 5px;
+}
+
+.marker-tag {
+    background-color: #0059a1;
+    color: white;
+    padding: 2px 8px;
+    border-radius: 12px;
+    font-size: 0.8em;
+    font-weight: bold;
+}
+
+/* Marker-specific colors */
+.marker-tag.smoke { 
+    background-color: #28a745; 
+}
+
+.marker-tag.regression { 
+    background-color: #17a2b8; 
+}
+
+.marker-tag.ui { 
+    background-color: #6f42c1; 
+}
+
+.marker-tag.performance { 
+    background-color: #6c757d; 
+}
+
+.marker-tag.security { 
+    background-color: #e83e8c; 
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    body {
+        padding: 10px;
+    }
+    
+    h1 {
+        font-size: 2em;
+        margin: 20px 0;
+    }
+    
+    .summary-box {
+        padding: 15px;
+        margin: 15px auto;
+    }
+    
+    .control-button {
+        padding: 10px 16px;
+        margin: 5px;
+        font-size: 0.9em;
+    }
+    
+    .nav-menu ul {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    footer {
+        flex-direction: column;
+        text-align: center;
+        gap: 10px;
+    }
+    
+    footer img {
+        order: 2;
+    }
+    
+    footer p {
+        order: 1;
+    }
+}
+
+/* Print Styles */
+@media print {
+    /* Clean printing layout */
+}

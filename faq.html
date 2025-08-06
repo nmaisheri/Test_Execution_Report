@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>FAQ - MIST AUTOMATION</title>
+    <style>
+        body {
+            font-family: Garamond, serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f8f9fa;
+        }
+
+        h1 {
+            font-family: Garamond, serif;
+            text-align: center;
+            color: #0059a1;
+            margin: 40px 0;
+            font-size: 2.5em;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            padding-bottom: 20px;
+            border-bottom: 2px solid #656f7a;
+        }
+
+        .nav-menu {
+            background-color: #0059a1;
+            padding: 15px 0;
+            margin-bottom: 20px;
+        }
+
+        .nav-menu ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+        }
+
+        .nav-menu a {
+            color: white;
+            text-decoration: none;
+            font-family: Garamond, serif;
+            font-size: 1.1em;
+            padding: 5px 15px;
+            border-radius: 4px;
+        }
+
+        .nav-menu a:hover, .nav-menu a.active {
+            background-color: #e86b31;
+        }
+
+        .faq-section {
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 20px;
+        }
+
+        .faq-item {
+            background: white;
+            border-radius: 8px;
+            margin-bottom: 15px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .faq-question {
+            padding: 20px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: #0059a1;
+            font-size: 1.1em;
+            font-weight: bold;
+        }
+
+        .faq-question:hover {
+            background-color: #f8f9fa;
+        }
+
+        .faq-answer {
+            display: none;
+            padding: 0 20px 20px;
+            color: #656f7a;
+            line-height: 1.6;
+            border-top: 1px solid #eee;
+        }
+
+        .faq-item.active .faq-answer {
+            display: block;
+        }
+
+        .faq-question::after {
+            content: '+';
+            font-size: 1.5em;
+            color: #e86b31;
+        }
+
+        .faq-item.active .faq-question::after {
+            content: '-';
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            margin-top: 40px;
+            border-top: 1px solid #656f7a;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        footer img {
+            max-width: 150px;
+            order: 1;
+        }
+
+        footer p {
+            color: #656f7a;
+            font-size: 14px;
+            margin: 0;
+            order: 2;
+        }
+    </style>
+</head>
+<body>
+    <nav class="nav-menu">
+        <ul>
+            <li><a href="index.html">Test Results</a></li>
+            <li><a href="faq.html" class="active">FAQ</a></li>
+        </ul>
+    </nav>
+    
+    <h1>Frequently Asked Questions</h1>
+    
+    <div class="faq-section">
+        <div class="faq-item">
+            <div class="faq-question">What is MIST Automation?</div>
+            <div class="faq-answer">
+                Medicare Integrate System Testing (MIST) is an initiative designed to support the Centers for Medicare & Medicaid Services (CMS) by providing comprehensive and integrated testing capabilities that are integrated into the Fee-For-Service (FFS) ecosystem. This ecosystem includes several core components: the Fiscal Intermediary Standard System (FISS), Multi-Carrier System (MCS), ViPS Medicare System (VMS), Common Working File (CWF), and the Benefits Coordination & Recovery Center (BCRC) / Medicare Secondary Payer Systems Contractor (MSPSC) through the Coordination of Benefits Agreement (COBA) processes.
+MIST also incorporates the Medicare Payment System Modernization (MPSM) project to facilitate both integrated and regression testing. This ensures the integrity and reliability of the end-to-end FFS claims processing environment.
+CMS handles over 1.2 billion claims annually and depends on modern, reliable, and defect-free applications to operate efficiently. MIST enables this by thoroughly validating system interactions across all relevant platforms. It ensures the MPSM is fully integrated with existing FFS systems, that contract requirements are met, and that all functionalities are accurately emulated prior to production deployment. 
+The overarching objective of MIST is to verify that CMS business and technical requirements are implemented correctly and that all system changes are free of defects before they are introduced into the production environment.
+
+            </div>
+        </div>
+        
+        <div class="faq-item">
+            <div class="faq-question">How do I interpret the test results?</div>
+            <div class="faq-answer">
+                Explanation of how to read and understand the test results...
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">What do the different status colors mean?</div>
+            <div class="faq-answer">
+                Explanation of color coding and status meanings...
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <img src="sparksoft_logo.png" alt="SparkSoft Corp Logo">
+        <p>Designed by SparkSoft Corp</p>
+    </footer>
+
+    <script>
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', () => {
+                const item = question.parentElement;
+                item.classList.toggle('active');
+            });
+        });
+    </script>
+</body>
+</html>

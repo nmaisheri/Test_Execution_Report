@@ -1,0 +1,377 @@
+{
+  "status": "Completed",
+  "start_time": "2025-08-06 10:56:14",
+  "end_time": "2025-08-06 10:56:30",
+  "overall_time": "00:11",
+  "total_execution_seconds": 11,
+  "passed": 2,
+  "failed": 2,
+  "error": 1,
+  "skipped": 0,
+  "inprogress": 0,
+  "not_tested": 20,
+  "selected_markers": [
+    "smoke"
+  ],
+  "available_markers": {
+    "smoke": "Quick smoke tests for basic functionality",
+    "regression": "Comprehensive regression tests",
+    "ui": "User interface tests",
+    "performance": "Performance and load tests",
+    "security": "Security and authentication tests"
+  },
+  "marker_statistics": {
+    "smoke": {
+      "total": 5,
+      "passed": 2,
+      "failed": 2,
+      "error": 1,
+      "skipped": 0,
+      "in_progress": 0,
+      "not_started": 0,
+      "not_tested": 0
+    },
+    "regression": {
+      "total": 5,
+      "passed": 0,
+      "failed": 0,
+      "error": 0,
+      "skipped": 0,
+      "in_progress": 0,
+      "not_started": 0,
+      "not_tested": 5
+    },
+    "ui": {
+      "total": 5,
+      "passed": 0,
+      "failed": 0,
+      "error": 0,
+      "skipped": 0,
+      "in_progress": 0,
+      "not_started": 0,
+      "not_tested": 5
+    },
+    "performance": {
+      "total": 5,
+      "passed": 0,
+      "failed": 0,
+      "error": 0,
+      "skipped": 0,
+      "in_progress": 0,
+      "not_started": 0,
+      "not_tested": 5
+    },
+    "security": {
+      "total": 5,
+      "passed": 0,
+      "failed": 0,
+      "error": 0,
+      "skipped": 0,
+      "in_progress": 0,
+      "not_started": 0,
+      "not_tested": 5
+    }
+  },
+  "tests": [
+    {
+      "name": "test_smoke_1",
+      "status": "Failed",
+      "markers": [
+        "smoke"
+      ],
+      "predetermined_outcome": "Failed",
+      "start_time": "2025-08-06 10:56:14",
+      "end_time": "2025-08-06 10:56:17",
+      "execution_time": "00:03",
+      "exception_log": "Traceback (most recent call last):\n  File \"/opt/app/tests/smoke/test_test_smoke_1.py\", line 64, in test_smoke_1\n    result = execute_smoke_test(test_data)\n  File \"/opt/app/lib/smoke_utils.py\", line 75, in execute_smoke_test\n    response = smoke_client.run_test(params)\n  File \"/opt/app/lib/smoke_client.py\", line 124, in run_test\n    return self.process_request(params)\nConnectionError: Unable to connect to main application endpoint\n\nTest Details:\n- Test Category: smoke\n- Test Name: test_smoke_1\n- Outcome Type: Failed\n- Test Environment: staging\n- Error Code: SMOKE_2784\n- Timestamp: 2025-08-06 10:56:17"
+    },
+    {
+      "name": "test_smoke_2",
+      "status": "Failed",
+      "markers": [
+        "smoke"
+      ],
+      "predetermined_outcome": "Failed",
+      "start_time": "2025-08-06 10:56:19",
+      "end_time": "2025-08-06 10:56:20",
+      "execution_time": "00:01",
+      "exception_log": "Traceback (most recent call last):\n  File \"/opt/app/tests/smoke/test_test_smoke_2.py\", line 51, in test_smoke_2\n    result = execute_smoke_test(test_data)\n  File \"/opt/app/lib/smoke_utils.py\", line 83, in execute_smoke_test\n    response = smoke_client.run_test(params)\n  File \"/opt/app/lib/smoke_client.py\", line 125, in run_test\n    return self.process_request(params)\nAssertionError: Basic health check failed - service not responding\n\nTest Details:\n- Test Category: smoke\n- Test Name: test_smoke_2\n- Outcome Type: Failed\n- Test Environment: staging\n- Error Code: SMOKE_9125\n- Timestamp: 2025-08-06 10:56:20"
+    },
+    {
+      "name": "test_smoke_3",
+      "status": "Passed",
+      "markers": [
+        "smoke"
+      ],
+      "predetermined_outcome": "Passed",
+      "start_time": "2025-08-06 10:56:21",
+      "end_time": "2025-08-06 10:56:23",
+      "execution_time": "00:02",
+      "exception_log": ""
+    },
+    {
+      "name": "test_smoke_4",
+      "status": "Error",
+      "markers": [
+        "smoke"
+      ],
+      "predetermined_outcome": "Error",
+      "start_time": "2025-08-06 10:56:24",
+      "end_time": "2025-08-06 10:56:26",
+      "execution_time": "00:02",
+      "exception_log": "Traceback (most recent call last):\n  File \"/opt/app/tests/smoke/test_test_smoke_4.py\", line 42, in test_smoke_4\n    result = execute_smoke_test(test_data)\n  File \"/opt/app/lib/smoke_utils.py\", line 72, in execute_smoke_test\n    response = smoke_client.run_test(params)\n  File \"/opt/app/lib/smoke_client.py\", line 80, in run_test\n    return self.process_request(params)\nException: Critical service dependency unavailable\n\nTest Details:\n- Test Category: smoke\n- Test Name: test_smoke_4\n- Outcome Type: Error\n- Test Environment: staging\n- Error Code: SMOKE_6798\n- Timestamp: 2025-08-06 10:56:26"
+    },
+    {
+      "name": "test_smoke_5",
+      "status": "Passed",
+      "markers": [
+        "smoke"
+      ],
+      "predetermined_outcome": "Passed",
+      "start_time": "2025-08-06 10:56:27",
+      "end_time": "2025-08-06 10:56:30",
+      "execution_time": "00:03",
+      "exception_log": ""
+    },
+    {
+      "name": "test_regression_1",
+      "status": "Not Tested",
+      "markers": [
+        "regression"
+      ],
+      "predetermined_outcome": "Not Tested",
+      "start_time": "",
+      "end_time": "",
+      "execution_time": "",
+      "exception_log": ""
+    },
+    {
+      "name": "test_regression_2",
+      "status": "Not Tested",
+      "markers": [
+        "regression"
+      ],
+      "predetermined_outcome": "Not Tested",
+      "start_time": "",
+      "end_time": "",
+      "execution_time": "",
+      "exception_log": ""
+    },
+    {
+      "name": "test_regression_3",
+      "status": "Not Tested",
+      "markers": [
+        "regression"
+      ],
+      "predetermined_outcome": "Not Tested",
+      "start_time": "",
+      "end_time": "",
+      "execution_time": "",
+      "exception_log": ""
+    },
+    {
+      "name": "test_regression_4",
+      "status": "Not Tested",
+      "markers": [
+        "regression"
+      ],
+      "predetermined_outcome": "Not Tested",
+      "start_time": "",
+      "end_time": "",
+      "execution_time": "",
+      "exception_log": ""
+    },
+    {
+      "name": "test_regression_5",
+      "status": "Not Tested",
+      "markers": [
+        "regression"
+      ],
+      "predetermined_outcome": "Not Tested",
+      "start_time": "",
+      "end_time": "",
+      "execution_time": "",
+      "exception_log": ""
+    },
+    {
+      "name": "test_ui_1",
+      "status": "Not Tested",
+      "markers": [
+        "ui"
+      ],
+      "predetermined_outcome": "Not Tested",
+      "start_time": "",
+      "end_time": "",
+      "execution_time": "",
+      "exception_log": ""
+    },
+    {
+      "name": "test_ui_2",
+      "status": "Not Tested",
+      "markers": [
+        "ui"
+      ],
+      "predetermined_outcome": "Not Tested",
+      "start_time": "",
+      "end_time": "",
+      "execution_time": "",
+      "exception_log": ""
+    },
+    {
+      "name": "test_ui_3",
+      "status": "Not Tested",
+      "markers": [
+        "ui"
+      ],
+      "predetermined_outcome": "Not Tested",
+      "start_time": "",
+      "end_time": "",
+      "execution_time": "",
+      "exception_log": ""
+    },
+    {
+      "name": "test_ui_4",
+      "status": "Not Tested",
+      "markers": [
+        "ui"
+      ],
+      "predetermined_outcome": "Not Tested",
+      "start_time": "",
+      "end_time": "",
+      "execution_time": "",
+      "exception_log": ""
+    },
+    {
+      "name": "test_ui_5",
+      "status": "Not Tested",
+      "markers": [
+        "ui"
+      ],
+      "predetermined_outcome": "Not Tested",
+      "start_time": "",
+      "end_time": "",
+      "execution_time": "",
+      "exception_log": ""
+    },
+    {
+      "name": "test_performance_1",
+      "status": "Not Tested",
+      "markers": [
+        "performance"
+      ],
+      "predetermined_outcome": "Not Tested",
+      "start_time": "",
+      "end_time": "",
+      "execution_time": "",
+      "exception_log": ""
+    },
+    {
+      "name": "test_performance_2",
+      "status": "Not Tested",
+      "markers": [
+        "performance"
+      ],
+      "predetermined_outcome": "Not Tested",
+      "start_time": "",
+      "end_time": "",
+      "execution_time": "",
+      "exception_log": ""
+    },
+    {
+      "name": "test_performance_3",
+      "status": "Not Tested",
+      "markers": [
+        "performance"
+      ],
+      "predetermined_outcome": "Not Tested",
+      "start_time": "",
+      "end_time": "",
+      "execution_time": "",
+      "exception_log": ""
+    },
+    {
+      "name": "test_performance_4",
+      "status": "Not Tested",
+      "markers": [
+        "performance"
+      ],
+      "predetermined_outcome": "Not Tested",
+      "start_time": "",
+      "end_time": "",
+      "execution_time": "",
+      "exception_log": ""
+    },
+    {
+      "name": "test_performance_5",
+      "status": "Not Tested",
+      "markers": [
+        "performance"
+      ],
+      "predetermined_outcome": "Not Tested",
+      "start_time": "",
+      "end_time": "",
+      "execution_time": "",
+      "exception_log": ""
+    },
+    {
+      "name": "test_security_1",
+      "status": "Not Tested",
+      "markers": [
+        "security"
+      ],
+      "predetermined_outcome": "Not Tested",
+      "start_time": "",
+      "end_time": "",
+      "execution_time": "",
+      "exception_log": ""
+    },
+    {
+      "name": "test_security_2",
+      "status": "Not Tested",
+      "markers": [
+        "security"
+      ],
+      "predetermined_outcome": "Not Tested",
+      "start_time": "",
+      "end_time": "",
+      "execution_time": "",
+      "exception_log": ""
+    },
+    {
+      "name": "test_security_3",
+      "status": "Not Tested",
+      "markers": [
+        "security"
+      ],
+      "predetermined_outcome": "Not Tested",
+      "start_time": "",
+      "end_time": "",
+      "execution_time": "",
+      "exception_log": ""
+    },
+    {
+      "name": "test_security_4",
+      "status": "Not Tested",
+      "markers": [
+        "security"
+      ],
+      "predetermined_outcome": "Not Tested",
+      "start_time": "",
+      "end_time": "",
+      "execution_time": "",
+      "exception_log": ""
+    },
+    {
+      "name": "test_security_5",
+      "status": "Not Tested",
+      "markers": [
+        "security"
+      ],
+      "predetermined_outcome": "Not Tested",
+      "start_time": "",
+      "end_time": "",
+      "execution_time": "",
+      "exception_log": ""
+    }
+  ]
+}

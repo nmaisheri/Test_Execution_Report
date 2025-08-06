@@ -1,0 +1,197 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+        <meta http-equiv="Refresh" content="60">
+    <meta name="viewport" content="width=device-width, initial-scale=0">
+    <title>Test Execution Report</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <style>
+        * {
+          box-sizing: border-box;
+          text-align: center;
+        }
+
+        th{text-align: center;}
+
+
+        /* Create five equal columns that floats next to each other */
+        .column {
+          float: left;
+          width: 25%;
+          padding: 5px;
+
+        }
+
+        .column2 {
+          float: left;
+          width: 20%;
+          padding: 5px;
+
+        }
+
+        /* Clear floats after the columns */
+        .row1:after {
+          content: "";
+          display: table;
+          clear: both;
+        }
+
+        /* Clear floats after the columns */
+        .row:after {
+          content: "";
+          display: table;
+          clear: both;
+        }
+
+    </style>
+</head>
+<body style="background-color:#ffffff;">
+<div class="data">
+    <h1 style="color:blue">Test Execution Status</h1>
+    <div class="row1" style="border: 3px solid black;">
+        <div class="column" style="color:#000000;">
+            <h4>Planned</h4>
+            <h4 id="planned"></h4>
+        </div>
+
+        <!--        <div class="column" style="color:green;">-->
+        <!--            <h4>Completed</h4>-->
+        <!--            <h3 id="done">0</h3>-->
+        <!--        </div>-->
+
+        <div class="column" style="color:green;">
+            <h4>Status</h4>
+            <h4 id="status"></h4>
+        </div>
+
+        <div class="column" style="color:green;">
+            <h4>Start Time</h4>
+            <h4 id="startTime"></h4>
+        </div>
+
+        <div class="column" style="color:orange;">
+            <h4>End Time</h4>
+            <h4 id="endTime"></h4>
+        </div>
+    </div>
+    <div class="row">
+        <div class="column2" style="color:#000000;">
+            <h5>TOTAL</h5>
+            <h5 id="total">0</h5>
+        </div>
+
+        <div class="column2" style="color:green;">
+            <h5>PASSED</h5>
+            <h5 id="passed">0</h5>
+        </div>
+
+        <div class="column2" style="color:red;">
+            <h5>FAILED</h5>
+            <h5 id="failed">0</h5>
+        </div>
+
+        <div class="column2" style="color:gray;">
+            <h5>Skipped</h5>
+            <h5 id="skipped">0</h5>
+        </div>
+
+        <div class="column2" style="color:orange;">
+            <h5>FAILED POST CONDITION</h5>
+            <h5 id="post_conditions">0</h5>
+        </div>
+    </div>
+</div>
+
+<div id="details">
+    <table id="tbl1" class="table table-stripped">
+        <thead style="background-color: #a3a375;">
+        <th>Name</th>
+        <th>PRE_REQUISITE</th>
+        <th>Test</th>
+        <th>POST_REQUISITE</th>
+        </thead>
+        <tbody id="tblBody"/>
+    </table>
+</div>
+</div>
+</body>
+<script>
+
+    document.getElementById("tblBody").innerHTML= "";
+    document.getElementById("total").innerText = "0";
+    document.getElementById("passed").innerText = "0";
+    document.getElementById("failed").innerText = "0";
+    document.getElementById("post_conditions").innerText = "0";
+
+
+    let cases;
+    let rows = "";
+    let passed=0;
+    let failed=0;
+    let skipped = 0;
+    let planned = 0;
+    let status = ""
+    let startTime = "";
+    let endTime = "";
+    let failed_POST_REQUISITEs=0;
+    let jsonPath = "./results.json";
+    fetch(jsonPath)
+        .then(response=> response.json())
+        .then(data =>{
+            planned = data.details.planned;
+            startTime = data.details.startTime;
+            endTime = data.details.endTime;
+            status = data.details.status;
+            for(let counter= data.cases.length-1; counter >=0; counter--){
+
+                let testcase = data.cases[counter];
+                let name = testcase.Name;
+                let PRE_REQUISITE = testcase.PRE_REQUISITE;
+                let TEST_CASE = testcase.TEST_CASE;
+                let POST_REQUISITE = testcase.POST_REQUISITE;
+                let rowColor = "#b3ffb3";
+                if(TEST_CASE === "Passed" && POST_REQUISITE === "Failed"){
+                    rowColor = "yellow";
+                    failed_POST_REQUISITEs += 1;
+                }else if(PRE_REQUISITE==="Failed" || TEST_CASE === "Failed"){
+                    rowColor = "red";
+                    failed += 1;
+                }else if(TEST_CASE == "Skipped"){
+                    rowColor = "gray";
+                    skipped += 1;
+                }
+                else{
+                    passed += 1;
+                }
+
+                let row = "<tr style=\"background-color:" + rowColor + ";\"><td>" + name + "</td>" +
+                            "<td>" + PRE_REQUISITE + "</td>" +
+                            "<td>" + TEST_CASE + "</td>" +
+                            "<td>" + POST_REQUISITE + "</td>" +
+                            "</tr>"
+                rows +=row
+            }
+
+
+            document.getElementById("planned").innerHTML= planned;
+            document.getElementById("status").innerHTML= status;
+            document.getElementById("startTime").innerHTML= startTime;
+            document.getElementById("endTime").innerHTML= endTime;
+
+            document.getElementById("tblBody").innerHTML= rows;
+            document.getElementById("total").innerText = passed + failed + failed_POST_REQUISITEs + skipped;
+            document.getElementById("passed").innerText = passed;
+            document.getElementById("failed").innerText = failed;
+            document.getElementById("post_conditions").innerText = failed_POST_REQUISITEs;
+            document.getElementById("skipped").innerText = skipped;
+
+
+        })
+        .catch(error => console.log(error));
+
+
+</script>
+</html>
