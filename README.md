@@ -4,7 +4,7 @@ This project provides a **real-time, interactive HTML dashboard** for viewing py
 
 ---
 
-## 🚀 Key Features
+## Key Features
 
 ### **Pytest Marker Integration**
 - **5 Test Categories**: `smoke`, `regression`, `ui`, `performance`, `security`
@@ -28,7 +28,7 @@ This project provides a **real-time, interactive HTML dashboard** for viewing py
 
 ---
 
-## 📁 Files Overview
+## Files Overview
 
 ### 1. `generate_fake_results.py` (Enhanced Test Simulator)
 
@@ -119,7 +119,7 @@ This project provides a **real-time, interactive HTML dashboard** for viewing py
 
 ---
 
-## 🔧 Usage & Commands
+## Usage & Commands
 
 ### **Basic Commands**
 
@@ -171,7 +171,7 @@ python generate_fake_results.py
 
 ---
 
-## 🎯 Marker-Specific Features
+## Marker-Specific Features
 
 ### **Test Execution Times**
 - **Smoke**: 1-3 seconds (fast validation)
@@ -208,7 +208,7 @@ python generate_fake_results.py
 
 ---
 
-## 🖥️ Dashboard Features
+## Dashboard Features
 
 ### **Real-time Monitoring**
 - **Live Status Updates**: Current execution progress
@@ -220,11 +220,11 @@ python generate_fake_results.py
 - **Expandable Errors**: Click failed/error tests to view exception details
 - **Marker Tags**: Visual indicators for test categories
 - **Status Colors**: 
-  - 🟢 **Green**: Passed tests
-  - 🔴 **Red**: Failed tests  
-  - 🟠 **Orange**: Error tests
-  - ⚪ **Gray**: Skipped/Not Selected tests
-  - 🟡 **Yellow**: In Progress tests
+  - **Green**: Passed tests
+  - **Red**: Failed tests  
+  - **Orange**: Error tests
+  - **Gray**: Skipped/Not Selected tests
+  - **Yellow**: In Progress tests
 
 ### **Professional Design**
 - **SparkSoft Branding**: Corporate colors and logo
@@ -234,7 +234,7 @@ python generate_fake_results.py
 
 ---
 
-## 🛠️ Technical Implementation
+## Technical Implementation
 
 ### **Backend (Python)**
 ```python
@@ -274,7 +274,7 @@ total_time = sum(individual_test_times)
 
 ---
 
-## 🚀 Deployment Options
+## Deployment Options
 
 ### **1. Local Development**
 ```bash
@@ -303,7 +303,7 @@ python generate_fake_results.py -m "smoke,regression"
 
 ---
 
-## 📊 Expected Results
+## Expected Results
 
 ### **Test Distribution (25 Total Tests)**
 - **Total Markers**: 5 categories
@@ -323,7 +323,7 @@ python generate_fake_results.py -m "smoke,regression"
 
 ---
 
-## 🎨 Customization Options
+## Customization Options
 
 ### **Branding**
 ```css
@@ -354,7 +354,7 @@ outcomes = ["Passed", "Passed", "Passed", "Failed", "Error"]  # Higher pass rate
 
 ---
 
-## 🔧 Browser Compatibility
+## Browser Compatibility
 
 - **Modern Browsers**: Chrome, Firefox, Safari, Edge (latest versions)
 - **Features**: Fetch API, ES6 JavaScript, CSS Grid/Flexbox
@@ -363,7 +363,7 @@ outcomes = ["Passed", "Passed", "Passed", "Failed", "Error"]  # Higher pass rate
 
 ---
 
-## 📝 Sample Output
+## Sample Output
 
 ```bash
 $ python generate_fake_results.py -m "smoke,security"
@@ -385,13 +385,13 @@ Completed: 4 passed, 4 failed, 2 errors, 0 skipped (10 total selected, 15 not se
 
 ---
 
-## 📄 License
+## License
 
 MIT License - Free for commercial and personal use. See `LICENSE` file for full details.
 
 ---
 
-## 🆘 Support
+## Support
 
 For questions about MIST Automation or this dashboard:
 - Check the **FAQ** page in the dashboard
