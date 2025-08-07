@@ -113,7 +113,7 @@ This project provides a **real-time, interactive HTML dashboard** for viewing py
 
 **Purpose:** Comprehensive FAQ about MIST Automation and dashboard usage
 
-### 5. `TestReportNipun.html` (Alternative Format)
+### 5. `TestReport.html` (Alternative Format)
 
 **Purpose:** Alternative report format with different data structure
 
